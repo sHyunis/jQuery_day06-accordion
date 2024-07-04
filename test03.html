@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1{
+            width: 200px;
+            height: 200px;
+            background-color: antiquewhite;
+        }
+    </style>
+</head>
+<body>
+    <button class="slideUp">slideUp</button>
+    <button class="slideDown">slideDown</button>
+    <button class="slideToggle">slideToggle</button>
+
+    <h1>사과는 나무에 달려있다.</h1>
+
+    <script src="./scripts/jquery-3.7.1.js"></script>
+    <script>
+        // height 제어
+        // height 높이가 기본적으로 존재해야 함
+        // css 속성에 height 속성을 디자인 해야한다는 의미가 아님
+        // 기본높이가 0만 아니면 된다.
+        $('.slideUp').on('click', function(){
+            $('h1').slideUp(1000);
+        });
+        $('.slideDown').on('click', function(){
+            $('h1').slideDown(1000);
+        });
+        $('.slideToggle').on('click', function(){
+            $('h1').slideToggle(1000);
+        });
+
+        // end(data처리)
+        // nodejs 
+        // react 
+    </script>
+</body>
+</html>

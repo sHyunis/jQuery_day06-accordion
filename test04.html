@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1{
+            width: 200px;
+            height: 200px;
+            background-color: antiquewhite;
+        }
+    </style>
+</head>
+<body>
+    <button class="slideUp">slideUp</button>
+    <button class="slideDown">slideDown</button>
+    <button class="slideToggle">slideToggle</button>
+
+    <h1>사과는 나무에 달려있다.</h1>
+
+    <script src="./scripts/jquery-3.7.1.js"></script>
+    <script>
+        
+        // width() / height() 제어
+
+        $('.slideUp').on('click', function(){
+            $('h1').css('transition', '1s').height(0); //set 용도
+        });
+        $('.slideDown').on('click', function(){
+            $('h1').css('transition', '1s').height('200px'); //set 용도
+        });
+        $('.slideToggle').on('click', function(){
+            console.log($('h1').height()); // get 용도
+        });
+
+    </script>
+</body>
+</html>

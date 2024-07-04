@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1{
+            width: 200px;
+            height: 200px;
+            background-color: antiquewhite;
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+    <button class="slideWidth0">slideWidth0</button>
+    <button class="slideWidth200">slideWidth200</button>
+    <button class="slideToggle">slideToggle</button>
+
+    <h1>사과는 나무에 달려있다.</h1>
+
+    <script src="./scripts/jquery-3.7.1.js"></script>
+    <script>
+        
+        // width() / height() 제어
+
+        $('.slideWidth0').on('click', function(){
+            $('h1').css('transition', '1s').width(0); //set 용도
+        });
+        $('.slideWidth200').on('click', function(){
+            $('h1').css('transition', '1s').width('200px'); //set 용도
+        });
+        $('.slideToggle').on('click', function(){
+            console.log($('h1').width()); // get 용도
+            console.log('window width : ',$(window).width());
+            // 반응형 사이트 제작시 사용한다.
+        });
+
+    </script>
+</body>
+</html>

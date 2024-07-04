@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1{
+            width: 200px;
+            height: 200px;
+            background-color: antiquewhite;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <button class="fadeIn">fadeIn</button>
+    <button class="fadeOut">fadeOut</button>
+    <button class="fadeTo">fadeTo</button>
+    <button class="fadeToggle">fadeToggle</button>
+
+    <h1>사과는 나무에 달려있다.</h1>
+
+    <script src="./scripts/jquery-3.7.1.js"></script>
+    <script>
+        $('.fadeIn').on('click', function(){
+            $('h1').fadeIn(); // default duration is 400
+        })
+        $('.fadeOut').on('click', function(){
+            $('h1').fadeOut();
+        })
+        $('.fadeTo').on('click', function(){
+            $('h1').fadeTo(1000, 0.5); //duration 1000, opacity 0.5
+        })
+        $('.fadeToggle').on('click', function(){
+            $('h1').fadeToggle("slow");
+        })
+    </script>
+</body>
+</html>

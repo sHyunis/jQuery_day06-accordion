@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1{
+            width: 200px;
+            height: 200px;
+            background-color: antiquewhite;
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+    <button class="right">right</button>
+    <button class="left">left</button>
+    <button class="bottom">bottom</button>
+    <button class="top">top</button>
+    <button class="all">all</button>
+
+    <h1>사과는 나무에 달려있다.</h1>
+
+    <script src="./scripts/jquery-3.7.1.js"></script>
+    <!-- <script>
+        // $('.right').on('click', function(){
+        //     $('h1').animate({'marginLeft' : '500px'}, 1000, 'linear', function(){
+        //         console.log('animate 완료');
+        //     });
+        // });
+        // $('.left').on('click', function(){
+        //     $('h1').animate({'marginLeft' : 0}, 1000, 'linear', function(){
+        //         console.log('animate 완료');
+        //     });
+        // });
+        // $('.bottom').on('click', function(){
+        //     $('h1').animate({'marginTop' : '200px'}, 1000, 'linear', function(){
+        //         console.log('animate 완료');
+        //     });
+        // });
+        // $('.top').on('click', function(){
+        //     $('h1').animate({'marginTop' : 0}, 1000, 'linear', function(){
+        //         console.log('animate 완료');
+        //     });
+        // });
+    </script> -->
+
+    <!-- all 코드 -->
+    <!-- <script>
+        $('.all').on('click', function(){
+            $('h1').animate({'marginLeft' : '200px'}, 1000, 'linear', function(){
+                console.log('animate 완료');
+            }).animate({'marginLeft' : 0}, 1000, 'linear', function(){
+                console.log('animate 완료');
+            }).animate({'marginTop' : '200px'}, 1000, 'linear', function(){
+                console.log('animate 완료');
+            }).animate({'marginTop' : 0}, 1000, 'linear', function(){
+                console.log('animate 완료');
+            });
+        });
+    </script> -->
+
+    <!-- callback 사용 -->
+    <!-- callback hell 주의 -->
+    <!-- callback은 최소한으로 -->
+    <!-- 주석 필수 -->
+    <script>
+        $('.all').on('click', function(){
+            // this == all
+            $('h1').animate({'marginLeft' : '200px'}, 1000, 'linear', function(){
+                // this == h1
+                $(this).animate({'marginLeft' : 0}, 1000, 'linear', function(){
+                    // this == h1
+                    $(this).animate({'marginTop' : '200px'}, 1000, 'linear', function(){
+                        // this == h1
+                        $(this).animate({'marginTop' : 0}, 1000, 'linear', function(){
+                        })// 4
+                    })// 3
+                })// 2
+            })// 1
+            //this == all
+        });
+    </script>
+</body>
+</html>
